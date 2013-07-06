@@ -38,7 +38,10 @@ def password():
         bits += lbits
     
     if args.length:
-        print ''.join(random.choice(bits) for x in xrange(args.length))
+        if len(bits)==0:
+            print "-----"
+        else:
+            print ''.join(random.choice(bits) for x in xrange(args.length))
 
 if __name__=='__main__':
     password()
